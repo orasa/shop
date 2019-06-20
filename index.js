@@ -22,7 +22,7 @@ app.get('/products', (req, res) => {
 		if (err) {
 			console.log('err', err)
 		} else {
-			console.log('result', result.rows)
+			res.send(result.rows)
 		}
 	})
 })
