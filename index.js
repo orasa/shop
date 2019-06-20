@@ -4,8 +4,11 @@ const express = require('express')
 const path = require('path')
 const app = express()
 
-// Database
-const db = require('./db')
+// API
+
+app.get('/api/products', require('./controllers/products_get'))
+app.get('/api/categories', require('./controllers/categories_get'))
+app.get('/api/colors', require('./controllers/colors_get'))
 
 // Static Files
 
@@ -15,16 +18,6 @@ app.use(express.static(path.join(__dirname, 'client')))
 app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '/client/products.html'))
 	console.log('__dirname', __dirname)
-})
-
-app.get('/products', (req, res) => {
-	db.query(`SELECT * FROM products`, (err, result) => {
-		if (err) {
-			console.log('err', err)
-		} else {
-			res.send(result.rows)
-		}
-	})
 })
 
 // Run Server
