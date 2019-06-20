@@ -7,6 +7,7 @@ const app = express()
 // Database
 const db = require('./db')
 
+
 // Static Files
 
 // serve every file inside 'client' folder as static
