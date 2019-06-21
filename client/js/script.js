@@ -3,17 +3,19 @@ window.onload = () => {
 
 	// ::: Categories :::
 
-	// target ul inside sidebar
-	let ul = document.getElementById('sidebar').getElementsByTagName('ul')[0]
-	// define categies
-	let categories = ['Wallets', 'Bags', 'Shoes', 'Umbrellas']
-	// display each category in the DOM
-	categories.forEach((c) => {
-		ul.insertAdjacentHTML('beforeEnd', `
-			<li>
-				<a href="#">${c}</a>
-			</li>
-		`)
+	axios.get('http://localhost:3000/api/categories').then((res) => {
+		// target ul inside sidebar
+		let ul = document.getElementById('sidebar').getElementsByTagName('ul')[0]
+		// define categies
+		let categories = res.data
+		// display each category in the DOM
+		categories.forEach((c) => {
+			ul.insertAdjacentHTML('beforeEnd', `
+				<li>
+					<a href="#">${c.name}</a>
+				</li>
+			`)
+		})
 	})
 
 	// ::: Products :::
@@ -47,8 +49,5 @@ window.onload = () => {
 	}).catch((err) => {
 		console.log('err', err)
 	})
-
-
-
 
 }
