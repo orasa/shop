@@ -16,7 +16,6 @@ window.onload = () => {
 		`)
 	})
 
-
 	// ::: Products :::
 
 	// target products
