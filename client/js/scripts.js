@@ -48,10 +48,17 @@ window.onload = () => {
  })
 }
 
+<<<<<<< HEAD
 //
 
 window.onload = () => {
  let products = document.getElementById('products')
+=======
+// ?
+
+window.onload = () => {
+  let products = document.getElementById('products')
+>>>>>>> local_branchShop
   let prod = [{name: 'NIKE', price: 199, model: 'AirSpeed',
   name: 'ADIDAS', price: 299, model: 'AirSpeed'
     }]
