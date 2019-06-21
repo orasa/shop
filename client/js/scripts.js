@@ -16,8 +16,22 @@ window.onload = () => {
         `)
     })
 
+    //promise function
+    const get_data = () => {
+    return new Promise((resolve, rejet) => {
+      setTimout(() => {
+        resolve ['Jeff', 'Edgar', 'Tom'])
+      }, 4000)
+  })
+}
 
-    // ::: Products :::
+get_data().then(resolve) => {
+  console.log('name', resolve)
+}).catch()
+
+
+
+
 
 
     axios.get('http://localhost:3000/api/products').then((res) => {
@@ -49,98 +63,37 @@ window.onload = () => {
 })
 }
 
-
+//setTimout(excute this function after time, time in mill sec) 2 agrulments
 //
-// // breaking down the function part
-// // (a) => { } bring this into the function
+// setTimeout(() => {
+//   console.log(2 + 5)
+// },1000)
 //
-// //writh this first then fillout the foll
-//
-// // ('url').then(a).catch(a) => {}
-//
-// window.onload = () => {
-//
-// axios.get('http://localhost:3000/api/products').then((res) => {
-//
-//   let products = res.data
-//   let products_ui = document.getElementById('products')
-//
-//          products.forEach((p) => {
-//           products_ui.insertAdjacentHTML('beforeEnd',`
-//           <div class="product">
-//             <div class="product-image">
-//               <i class="far fa-star"></i>
-//             </div>
-//             <div class="product-extras">
-//               <div class="description">
-//                 <h4>${p.description}</h4>
-//                 <small>${p.model}</small>
-//               </div>
-//               <div class="price">
-//                 <span>${p.price}</span>
-//                 <a href="#" class="button">shop now</a>
-//               </div>
-//             </div>
-//           </div>`
-//         )
-//       })
-// }).catch((err) => {
-//         console.log('err', err)
-//     })
-//
-// // FINISHED THE GET PRODUCTS WITH PROMISS
-//
-//
-//
-//
-//
-//
-// // // get id from html, we pass id name into
-// // let wrap = document.getElementById('wrap')
-// //
-// // console.log(wrap)
-// //
-// // // window.onload allowing us to put scipt on the head of html
-// //
-// //
-// //
-// // // window.onload = () => {
-// // //    console.log('window is loaded')
-// // // }
-// //
-// // // add element on browser
-// // //writing html element on javaScript File insert() next to Sidebar
-// // //take 2 paramenter beforebegin, afterEnd, afterBeginning
-// //
-// // // window.onload = () => {
-// // //  let sidebar = document.getElementById('sidebar')
-// // //  sidebar.insertAdjacentHTML('beforeEnd',`<h1>Promotion</h1>`)
-// // // }
-// //
-// // window.onload = () => {
-// //  let sale = document.getElementById('sale')
-// //  sale.insertAdjacentHTML('afterEnd',`<h1>Promotion</h1>`)
-// // }
-// //
-// // //getElementsByTagName getElementsByTagName('ul') = arrayof [ul, ul]
-// // // window.onload = () => {
-// // //  let ul = document.getElementsByTagName('ul')[0]
-// // //  ul.insertAdjacentHTML('beforeEnd',`<li>
-// // //    <a href="#">Wallet</a>
-// // //  </li>`)
-// // // console.log(ul);
-// // // }
-// //
-//
-//   let ul = document.getElementsByTagName('ul')[0]
-//  let categories = ['Wallets','Bags', 'Shoes', 'Umbrella']
-//  //display each
-//
-//  categories.forEach((c) => {
-//    ul.insertAdjacentHTML('beforeEnd',`
-//    <li>
-//     <a href="#">${c}</a></li>
-//     `)
-//  })
-//
+// const set_name = (n) =>
+// setTimeout() = {
+//   let name = n
+//   console.log("name after 3s", name)
 // }
+// set_name('Tony')
+//
+// setTimeout(() => {
+//   console.log(2 + 5)
+// },1000)
+
+const array = [1, 2, 3]
+
+setTimeout(() => {
+	console.log(array)}, 5000
+)
+
+// setTimout(() =>
+// number = array
+// number.forEach((i) => {
+//   console.log(i);
+// }, 5000)
+// )
+
+// use promise
+const get_data = ()=> {
+  return ['nui', 'mae', 'Nic']
+}
