@@ -48,19 +48,12 @@ window.onload = () => {
  })
 }
 
-<<<<<<< HEAD
 //
 
 window.onload = () => {
  let products = document.getElementById('products')
-=======
-// ?
-
-window.onload = () => {
-  let products = document.getElementById('products')
->>>>>>> local_branchShop
-  let prod = [{name: 'NIKE', price: 199, model: 'AirSpeed',
-  name: 'ADIDAS', price: 299, model: 'AirSpeed'
+  let prod = [{description: 'NIKE', price: 199, model: 'AirSpeed',
+  description: 'ADIDAS', price: 299, model: 'AirSpeed'
     }]
 
  prod.forEach((p) => {
@@ -71,7 +64,7 @@ window.onload = () => {
      </div>
      <div class="product-extras">
        <div class="description">
-         <h4>${p.name}</h4>
+         <h4>${p.description}</h4>
          <small>${p.model}</small>
        </div>
        <div class="price">
