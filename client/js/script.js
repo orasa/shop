@@ -21,7 +21,7 @@ window.onload = () => {
 	// ::: Products :::
 
 	axios.get('http://localhost:3000/api/products').then((res) => {
-		// console.log('res', res.data)
+		console.log('res', res.data)
 		let products = res.data
 		// target products
 		let products_ui = document.getElementById('products')
@@ -30,7 +30,7 @@ window.onload = () => {
 		products.forEach((p) => {
 			products_ui.insertAdjacentHTML('beforeEnd', `
 			<div class="product">
-				<div class="product-image">
+				<div class="product-image" style="background-image: url('../img/${p.image}')">
 					<i class="far fa-star"></i>
 				</div>
 				<div class="product-extras">
