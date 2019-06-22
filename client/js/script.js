@@ -18,7 +18,37 @@ window.onload = () => {
 		})
 	})
 
-	// ::: Products :::
+	// ::: Products only id = 1 :::
+	axios.get('http://localhost:3000/api/productsx').then((res) => {
+		console.log('res', res.data)
+		let products = res.data
+		// target products
+		let products_ui = document.getElementById('products')
+
+		// display each product in the DOM
+		products.forEach((p) => {
+			products_ui.insertAdjacentHTML('beforeEnd', `
+			<div class="product">
+				<div class="product-image" style="background-image: url('../img/${p.image}')">
+					<i class="far fa-star"></i>
+				</div>
+				<div class="product-extras">
+					<div class="description">
+						<h4>${p.name}</h4>
+						<small>${p.description}</small>
+					</div>
+					<div class="price">
+						<span>$${p.price}</span>
+						<a href="#" class="button">shop now</a>
+					</div>
+				</div>
+			</div>
+			`)
+		})
+	}).catch((err) => {
+		console.log('err', err)
+	})
+	//
 
 	axios.get('http://localhost:3000/api/products').then((res) => {
 		console.log('res', res.data)
